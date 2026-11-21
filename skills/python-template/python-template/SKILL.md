@@ -4,7 +4,7 @@ description: "Use first, before creating any file, whenever a new Python project
 license: MIT
 compatibility: Requires uv 0.9.17 or later and git 2.28 or later.
 metadata:
-  version: "3.0.0"
+  version: "3.0.1"
 ---
 # Python template
 

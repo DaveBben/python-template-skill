@@ -1,5 +1,6 @@
 # `uv run pre-commit install` installs both stages below. The fast checks run on
-# each commit; mypy, semgrep and the tests run on push, so commits stay quick.
+# each commit; vulture, mypy, semgrep and the tests run on push, so commits stay
+# quick and a commit of interface stubs, unused until implemented, goes through.
 # Tools from uv.lock run through `uv run`, so the hooks, the editor and CI use
 # one version of each.
 default_install_hook_types: [pre-commit, pre-push]
@@ -60,6 +61,7 @@ repos:
         language: system
         types: [python]
         pass_filenames: false
+        stages: [pre-push]
       - id: mypy
         name: mypy
         entry: uv run mypy src tests .claude/hooks/guard.py
